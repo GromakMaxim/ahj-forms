@@ -33,6 +33,5 @@ describe('popover', () => {
       .toBe(true);
 
     await page.waitForSelector('.button');
-
   });
 });
