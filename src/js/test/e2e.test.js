@@ -21,7 +21,7 @@ describe('popover', () => {
   test('Должен появится popover', async () => {
     await page.goto(baseUrl);
     await page.waitForSelector('.button');
-    page.click('.button');
+    await page.click('.button');
 
     const result = await page.evaluate(() => {
       const isHidden = !document.getElementsByClassName('button')[0].classList.contains('hidden');
@@ -29,10 +29,10 @@ describe('popover', () => {
         isHidden,
       };
     });
-
     await expect(result.isHidden)
       .toBe(true);
 
     await page.waitForSelector('.button');
+
   });
 });
